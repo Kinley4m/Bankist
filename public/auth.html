@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist Auth</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-page">
+    <nav class="nav auth-nav">
+      <a href="/" class="nav__logo-link">
+        <img src="img/logo.png" alt="Bankist logo" class="nav__logo" id="logo" />
+      </a>
+      <div class="auth-nav__actions">
+        <a href="/" class="btn btn--text">Home</a>
+        <a href="dashboard.html" class="btn">Dashboard</a>
+      </div>
+    </nav>
+
+    <main class="auth-wrapper">
+      <section class="auth-card">
+        <div class="auth-card__left">
+          <p class="section__description">Real Authentication</p>
+          <h1 class="section__header">Login / Signup with Node.js + MongoDB</h1>
+          <p class="auth-copy">
+            This page is connected with the real backend API. Signup creates a new account,
+            login verifies your password, and a JWT token is stored in the browser.
+          </p>
+        </div>
+
+        <div class="auth-card__right">
+          <div class="auth-tabs">
+            <button class="auth-tab auth-tab--active" data-mode="login">Login</button>
+            <button class="auth-tab" data-mode="signup">Signup</button>
+          </div>
+
+          <form id="authForm" class="auth-form">
+            <div id="fullNameGroup" class="form-group hidden-field">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Shivam Kumawat" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="shivam@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Minimum 6 characters" required />
+            </div>
+
+            <button type="submit" class="btn auth-submit">Login</button>
+          </form>
+
+          <p id="authMessage" class="auth-message"></p>
+
+          <div class="demo-box">
+            <h3>Integrated APIs</h3>
+            <ul>
+              <li>POST /api/auth/signup</li>
+              <li>POST /api/auth/login</li>
+              <li>GET /api/account/profile</li>
+              <li>POST /api/account/deposit</li>
+              <li>POST /api/account/withdraw</li>
+              <li>POST /api/account/transfer</li>
+              <li>POST /api/account/loan</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dashboard-page">
+    <nav class="nav auth-nav">
+      <a href="/" class="nav__logo-link">
+        <img src="img/logo.png" alt="Bankist logo" class="nav__logo" id="logo" />
+      </a>
+      <div class="dashboard-user-actions">
+        <a href="auth.html" class="btn btn--text">Auth</a>
+        <button id="logoutBtn" class="btn">Logout</button>
+      </div>
+    </nav>
+
+    <main class="dashboard-wrapper">
+      <section class="dashboard-hero">
+        <div>
+          <p class="section__description">Connected with MongoDB</p>
+          <h1 class="section__header">Your Real Bankist Dashboard</h1>
+          <p class="auth-copy">Deposit, withdraw, request loans, and transfer money using backend APIs.</p>
+        </div>
+        <div class="balance-card">
+          <span>Current Balance</span>
+          <h2 id="balanceAmount">₹0</h2>
+          <p id="accountInfo">Loading account...</p>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="panel profile-panel">
+          <h3>Account Details</h3>
+          <p><strong>Name:</strong> <span id="userName">-</span></p>
+          <p><strong>Email:</strong> <span id="userEmail">-</span></p>
+          <p><strong>Account No:</strong> <span id="userAccount">-</span></p>
+          <p><strong>Member Since:</strong> <span id="userJoined">-</span></p>
+        </div>
+
+        <div class="panel form-panel">
+          <h3>Quick Actions</h3>
+          <form id="depositForm" class="action-form">
+            <input name="amount" type="number" min="1" step="0.01" placeholder="Deposit amount" required />
+            <input name="note" type="text" placeholder="Note (optional)" />
+            <button class="btn" type="submit">Deposit</button>
+          </form>
+
+          <form id="withdrawForm" class="action-form">
+            <input name="amount" type="number" min="1" step="0.01" placeholder="Withdraw amount" required />
+            <input name="note" type="text" placeholder="Note (optional)" />
+            <button class="btn" type="submit">Withdraw</button>
+          </form>
+
+          <form id="loanForm" class="action-form">
+            <input name="amount" type="number" min="1" step="0.01" placeholder="Loan amount" required />
+            <input name="note" type="text" placeholder="Reason / note" />
+            <button class="btn" type="submit">Request Loan</button>
+          </form>
+
+          <form id="transferForm" class="action-form">
+            <input name="receiver" type="text" placeholder="Receiver email or account no" required />
+            <input name="amount" type="number" min="1" step="0.01" placeholder="Transfer amount" required />
+            <input name="note" type="text" placeholder="Transfer note" />
+            <button class="btn" type="submit">Transfer</button>
+          </form>
+          <p id="dashboardMessage" class="auth-message"></p>
+        </div>
+      </section>
+
+      <section class="panel transactions-panel">
+        <h3>Recent Transactions</h3>
+        <div id="transactionList" class="transaction-list"></div>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
